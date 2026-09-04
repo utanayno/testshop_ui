@@ -4,7 +4,7 @@ def test_header_title(cart_page):
 
 def test_empty_cart(cart_page):
     cart_page.open_page()
-    cart_page.check_empty_cart_alert()
+    cart_page.check_cart_alert('Your cart is empty!')
 
 def test_delete_from_cart(cart_page, catalog_category_page):
     catalog_category_page.open_page()
@@ -12,7 +12,7 @@ def test_delete_from_cart(cart_page, catalog_category_page):
     catalog_category_page.check_cart_quantity(1)
     cart_page.open_page()
     cart_page.delete_item_from_cart()
-    cart_page.check_empty_cart_alert()
+    cart_page.check_cart_alert('Your cart is empty!')
 
 def test_change_item_quantity(cart_page, catalog_category_page):
     catalog_category_page.open_page()

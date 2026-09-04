@@ -16,11 +16,11 @@ class CartPage(BasePage):
         cart_title = self.find(cart_page_title_loc)
         assert cart_title.text == text
 
-    def check_empty_cart_alert(self):
+    def check_cart_alert(self, expected_cart_alert):
         WebDriverWait(self.driver, 10).until(
             EC.text_to_be_present_in_element(
                 empty_cart_alert_loc,
-                "Your cart is empty!"
+                expected_cart_alert
             )
         )
 

@@ -11,7 +11,6 @@ custom_item_loc = (By.CSS_SELECTOR, "a.text-primary.text-decoration-none")
 item_loc = (By.XPATH, "(//td[@class='oe_product'])[1]")
 add_to_cart_loc = (By.CSS_SELECTOR, "a[aria-label='Shopping cart']")
 continue_shopping_btn = (By.CSS_SELECTOR, "div.modal.o_legacy_dialog button.btn.btn-secondary")
-cart_quantity_loc = (By.CLASS_NAME, "my_cart_quantity")
 
 
 class CatalogCatPage(BasePage):
@@ -40,6 +39,3 @@ class CatalogCatPage(BasePage):
             EC.element_to_be_clickable(continue_shopping_btn)
         )
         continue_shopping.click()
-
-    def check_cart_quantity(self, expected_quantity):
-        WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(cart_quantity_loc, str(expected_quantity)))

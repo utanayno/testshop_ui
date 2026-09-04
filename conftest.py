@@ -9,7 +9,6 @@ from pages.item_page import ItemPage
 def driver():
     chrome_driver = webdriver.Chrome()
     chrome_driver.maximize_window()
-    sleep(3)
     return chrome_driver
 
 @pytest.fixture
